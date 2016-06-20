@@ -1,0 +1,84 @@
+<style>
+html { height:100%; }	
+	#expand-all { cursor:pointer; }
+	[id^='expand-all-']:hover { cursor:pointer; color:#ff3385; }
+	#subtabs { margin-top:10px; }	
+	#tabs_2 li a { font-size:18px !important; font-weight:bold; }
+	#tabs_3 li a { font-size:18px !important; font-weight:bold; }	
+	#tabs_5 li a { font-size:18px !important; font-weight:bold; }	
+	#tabs_6 li a { font-size:18px !important; font-weight:bold; }	
+	#tabs_7 li a { font-size:18px !important; font-weight:bold; }	
+	#tabs_8 li a { font-size:18px !important; font-weight:bold; }	
+	#tabs_9 li a { font-size:18px !important; font-weight:bold; }
+	#tabs_11 li a { font-size:18px !important; font-weight:bold; }		
+	.footer { position:static; }
+	.footer-outer { } 
+	.hide { display:none; }
+	.learning_center  p { padding-top: 10px; }	
+	.learning_center .active {	border-bottom:none; }
+	.learning_center .affix { top: 0; }
+	.learning_center .bottom-line { font-size:14px; padding: 0px 0px 25px 8px; }
+	.learning_center .bottom-line-header { font-size:16px; padding: 18px 0px 6px 8px; font-weight:bold; }	 
+	.learning_center .bs-docs-sidebar { margin-top: 15px; margin-bottom: 20px; line-height:15px; min-width:343px; }
+	.learning_center .bs-docs-sidebar li a { padding: 6px 0px; }	
+	.learning_center .bs-docs-sidebar .nav > li > a { padding: 4px 8px; font-size: 13px; font-weight: 400; border-bottom: 1px solid #fff; }	
+	.learning_center .bs-docs-sidebar .nav { display: none; }
+	.learning_center .bs-docs-sidebar .nav > .active > a,
+	.learning_center .bs-docs-sidebar .active > a,
+	.learning_center .bs-docs-sidebar .active .nav .active > a {  color: #ff3385;border-bottom: 1px solid #ff3385; }	
+	.learning_center .bs-docs-sidebar .active .nav .active,
+	.learning_center .bs-docs-sidebar .active .nav,
+	.learning_center .bs-docs-sidebar .active { display: block; }
+	.learning_center .col-sm-10 ul { list-style-type: none; }
+	.learning_center .column { width:33%; display:inline-block; vertical-align:top; text-align:center; }   
+	.learning_center .comparison-content { display:none; } 
+	.learning_center .comparison-open { border-top:1px solid #ccc; }
+   .learning_center .comparison-section { font-size:13px; }
+	.learning_center .comparison-section h3 { font-size:20px; text-align:center; vertical-align:top; }
+	.learning_center .comparison-section:first-child h3 {margin-top:0px; }
+	.learning_center .comparison-section li { font-size:14px; text-align:left; }
+   .learning_center .comparison-section ul { padding-left:12px !important; width:90%; margin:auto; list-style:disc; }
+   .learning_center .comparison-section:first-child .bottom-line-header { margin-bottom: -18px; }      
+   .learning_center .comparison-section:first-child .comparison-title { border-top:1px solid #ccc; padding-top:20px; } 
+   .learning_center .comparison-section:last-child .bottom-line { border-bottom: 1px solid #ccc; }	
+	.learning_center .comparison-title { font-size:18px !important; text-align:left !important; cursor:pointer; border-bottom: 1px solid #ccc; padding-bottom: 14px; }
+	.learning_center .expand-text { padding-left:20px; font-size:16px; } 
+	.learning_center .header-icons { margin:14px 0px 14px 0px; } 
+	.learning_center .header_image .hi_label { font-family:Arial, Helvetica, sans-serif; }
+	.learning_center .header_image:first-child .hi_label { /*margin-left: -9px;*/ }
+	.learning_center .header_image:last-child .hi_label { /*margin-right: -9px;*/ }
+	.learning_center .hi_warranty_num span { font-size: 28px !important; }	
+	.learning_center .image { text-align:center; width:50%; }
+	.learning_center .info li { margin-left:20px; line-height:20px; font-size: 15px; }
+	.learning_center .info ul { list-style:disc !important; padding:0 !important; }
+	.learning_center .info { padding:30px 0px 0px 0px; text-align:left; vertical-align:middle; }
+	.learning_center .inner { display:inline-block; float:left; }	
+	.learning_center .loading { padding:50px; font-size:24px; color:#134FB8;}
+	.learning_center .nav-tabs > li { background-color: white !important; border: 1px solid #CCC; border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom:none; }	
+	.learning_center .nav-tabs > li > a { margin-right:0px !important; border:none !important; }	
+	.learning_center .outer { display:block; clear:both; min-height:300px; }
+	.learning_center .outer .inner h2 { margin: 10px 0px 10px 0px; }
+	.learning_center .outer .inner h3 { margin: 10px 0px 6px 0px; font-size:17px; }		
+	.learning_center .price { font-weight:bold; font-size:16px; padding: 10px 0px 0px 0px; }	
+	.learning_center .quiz-link { color:#00b359; cursor:pointer; }
+	.learning_center .quiz-link:hover { color:#ff3385; } 
+	.learning_center .quiz-link-outer { padding-top:10px; }
+	.learning_center .rebrand { width:19%; display:inline-block; text-align:center; }
+	.learning_center .rebrand-name { text-align:center; width:168px; }
+	.learning_center .rebrands-section { text-align:center; margin-bottom:50px; }
+	.learning_center .row { margin-left:-11px !important; border-radius:8px; }	
+	.learning_center .section_data { padding: 10px 0px 10px 5px; margin-left:5px; border-left:1px dotted #CCC; text-align:justify; }
+	.learning_center .section_title { color:#134fb8; font-size: 16px; padding-left:-15px; cursor:pointer; padding-top:5px; }
+	.learning_center .show { display:block !important; }
+	.learning_center .similarities { vertical-align:top; padding-top:100px; }
+	.learning_center .similarities li { text-align:center !important; }
+	.learning_center .similarities ul { padding-top:20px; list-style:none; padding-left:0px !important; }	
+	.learning_center .tab-pane .row { border: 1px solid #CCC; border-top:none;  }
+	.learning_center .tabcontainer {	margin:0px;	padding:0px; border:1px dotted #FFF; border-top:none;	}	
+	.learning_center .tabcontainer .nav > li > a { padding: 6px 7px !important; font-size:14px !important; }
+	.learning_center .view-pdf { width:100%; text-align:right; line-height:200%; }
+	.load-text { text-align:center; font-size: 96px !important; color:#fff; vertical-align:middle !important; font-weight:bold; margin-top:160px; font-family: 'Century Gothic', Arial, Helvetica, sans-serif !important; }
+	.loading { top:0; left:0; right:0; position:fixed; height:100%; width:100%; z-index: 10; background: rgba(0, 0, 0, 0.75); }
+	.no-border { border:none !important; }
+
+</style>

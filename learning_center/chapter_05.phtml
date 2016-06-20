@@ -1,0 +1,205 @@
+<?php
+// pen, standard battery				
+$collection_of_products_standard = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')
+				->addAttributeToSelect('pen_battery_style')
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addFieldToFilter('pen_battery_style', 137) // standard battery
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%28%'))) // herb				
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(1);
+				
+// pen, ellipse battery				
+$collection_of_products_ellipse = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')
+				->addAttributeToSelect('pen_battery_style')
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addFieldToFilter('pen_battery_style', 138)  // ellipse battery
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%28%'))) //herb
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(2);
+		
+	?>
+
+
+<h2>Chapter 5: Herb Pen Vaporizers <span id="expand-all-05" class="expand-text expand-all">Expand</span></h2>
+
+<ul class="chapter">
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What is an Herb Pen Vaporizer?</div>
+      <div style="display:none;" class="section_data">
+      	<p>Herb pen vaporizers represent a quick, discreet and convenient way to enjoy flowers on-the-go. Although commonly referred to as "vape pens", that name can be a little misleading, as these devices don't really vaporize. The distinction of being a true vaporizer is actually reserved for another class of products known as "portable vaporizers".</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What are the Differences Between an Herb Pen Vaporizer and a Portable Vaporizer?</div>
+      <div style="display:none;" class="section_data">
+	      <p>The main difference between herb pen vaporizers and portable vaporizers is the way in which they heat plant material. Pen-style units utilize a method called conduction by transferring heat directly from the heating coil to your herbs. As a result of making direct contact with the heat source, combustion occurs and smoke is produced.</p>
+         <h3>Convection vs Conduction</h3>
+         <p>An easy way to understand how conduction works is by simply picturing a cup of coffee. When hot coffee is poured into a ceramic mug, heat is transferred directly from the hot liquid to the cup, thus heating the mug and causing it to be warm to the touch. The mug is "conducting" the heat directly from the coffee itself.</p>
+         <p>In contrast, most portable vaporizers employ a method called convection, which heats herbs placed in a chamber by passing and circulating heated air through them. During this method, the material being heated never comes into direct contact with the heating element, but is instead essentially "cooked".</p>
+         <p>The simplest way to understand the principles of convection is to picture a hair dryer. The heating element inside of the hair dryer heats the air, which is then blown out and transferred from the hot air to your hair, which in turn heats and dries it. At no point does your hair ever come into direct contact with the heat source.</p>
+      </div>
+   </li>   
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Using an Herb Pen Vaporizer</div>
+      <div style="display:none;" class="section_data">
+      <p>When using an herb pen vaporizer, dry material is placed into the chamber (or tank), which also typically houses the heating coil itself. It's important to realize that some (but not all) of your dry material will come into direct contact with the coil itself. Once the power button is pressed, the coil begins heating instantly, and will become red hot in a matter of seconds.</p>
+      <p>Unlike portable vaporizers, which are set to a preferred heat setting, and stay at a constant temperature for the duration of the session (baking all dry material evenly at one time), pen-style units require the power button to be pressed during each draw in order to activate the heating coil. </p>
+      <p>This allows you to enjoy multiple sessions from a single packed chamber, as you're able to control when and how often the heating element is activated. The fact that herb pen vaporizers heat instantly makes them ideal for quick-draws in public.</p>
+      <p>At this point, any herb that is touching the coil will essentially burn and combust in the same way it would if you were taking a lighter to it. The rest of the herb in the chamber will heat unevenly, and in some cases, not at all. Inspecting the remnants in the chamber after a session will reveal a mixture of charred, black ash and green bud that doesn't look like it's been heated at all. </p>
+      <p>In order to make sure that dry material heats more evenly, it's a good idea to occasionally open the chamber during your session and mix the herbs around. This will help ensure that all packed material gets heated, and not just the portion that initially comes into contact with the heating coil.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Herb Pen Vaporizers</b></div>
+      <div style="display:none;" class="section_data">
+      	<div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_5">         
+               <li class="active"><a href="#standard" data-toggle="tab">Standard Battery</a></li>
+               <li><a href="#ellipse" data-toggle="tab">Elips Battery</a></li>
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="standard">
+                  <ul class="nav nav-tabs" id="subtabs_5">
+                 <?php
+					  foreach($collection_of_products_standard as $product) {                  
+									if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_5" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_5" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>       
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                     
+                  <?php foreach($collection_of_products_standard as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_5">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>        
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                              </div>
+                              <div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+               <div class="tab-pane" id="ellipse">
+                  <ul class="nav nav-tabs" id="subtabs_5">
+                      <?php foreach($collection_of_products_ellipse as $product) { 
+							 		if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_5" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_5" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>       
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                    
+                     <?php foreach($collection_of_products_ellipse as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }
+						   ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_5">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                              </div>
+                              <div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>       
+                  </div>
+               </div>
+            </div>
+         </div>      
+      </div>
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=5" class="quiz-link">Click Here to Take the Chapter Five Quiz</a></div>
+
+   </li>
+   
+   
+</ul>

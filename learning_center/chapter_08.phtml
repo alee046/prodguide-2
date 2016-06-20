@@ -1,0 +1,118 @@
+<?php 				
+// ejuice pen			
+$collection_of_products_e_juice_pen = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')				
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addAttributeToFilter('vbg_vape_material', 29) // ejuice
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(1);
+?>
+<h2>Chapter 8: E-Juice Pen Vaporizers <span id="expand-all-08" class="expand-text expand-all">Expand</span></h2>
+<ul class="chapter">
+    <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What is an E-Juice Pen Vaporizer?</div>
+      <div style="display:none;" class="section_data">
+         <p>E-juice pen vaporizers are increasing in popularity every day, as they offer those looking to quit smoking a safe and effective alternative to the harmful chemicals, byproducts and additives found in cigarettes. E-juice pen vaporizers can be used just about anywhere, and won’t leave a discernible aroma or offensive smell like a cigarette. Instead of smoke, these pens only produce pure vapor, making them ideal for public use.</p>
+         
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>How do E-Juice Pen Vaporizers Work?</div>
+      <div style="display:none;" class="section_data">
+      	<p>Most vape pens for e-juice utilize a lithium-ion battery as their power source, as well as a tank (clearomizer), which holds the e-liquid. Contained within the tank is the heat source, known as the atomizer. E-juice atomizers typically utilize wicks, which absorbs the liquid in the tank and is then heated by pressing the power button. While all e-juice vaporizers function similarly, things like size, atomizer type, battery life and overall build quality tend to vary from unit to unit.</p>
+      	
+      </div>
+   </li>
+
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Parts of an E-Juice Pen Vaporizer</div>
+      <div style="display:none;" class="section_data">
+      	<p><b>Tank: </b> The tank of an e-juice pen (sometimes also referred to as a clearomizer or cartomizer) is the portion that contains the e-juice and atomizer, which screws onto the pen’s battery via threading. The most common type of threading utilized by e-juice tanks and batteries is referred to as 510. Any tank that features 510 threading is compatible with any 510 threaded batteries.</p>
+     		<p><b>Battery:</b> Lithium-ion batteries are the portion of e-juice pen vaporizers that power the device. A power button located on the battery is pressed to activate the unit’s atomizer, which initiates the heating of the e-juice in the tank, which in turn produces vapor. Batteries typically feature 510 threading, allowing them to be compatible with most all tanks.</p>
+         <p><b>Atomizer: </b> Like herb pen vaporizers and wax pen vaporizers, e-juice vaporizers also utilize an atomizer as their heat source. The atomizer of an e-juice vaporizer contains the wick and heating coil. E-juice is absorbed into the wick, which is then heated by the coil to create vapor. In recent years, atomizers have been redesigned and improved to feature shorter wicks.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>E-Juice Pen Vaporizers</b></div>
+      <div style="display:none;" class="section_data">
+      	 <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_8">         
+               <li class="active"><a href="#ejuicepen" data-toggle="tab">E-Juice Pen Vaporizers</a></li>               
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="ejuicepen">
+                  <ul class="nav nav-tabs" id="subtabs_8">
+                 <?php
+					  foreach($collection_of_products_e_juice_pen as $product) {
+                 		if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_8" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_8" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>    					  
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                     
+                  <?php foreach($collection_of_products_e_juice_pen as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_8">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>        
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=8" class="quiz-link">Click Here to Take the Chapter Eight Quiz</a></div>
+
+   </li>
+</ul>

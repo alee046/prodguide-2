@@ -1,0 +1,20 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+## Hide for non-VN IPs
+## Deactivated 4/21 when Password functionality added
+# RewriteCond %{REMOTE_HOST} !^69.75.73.162
+# RewriteCond %{REMOTE_HOST} !^68.170.70.60
+# RewriteCond %{REMOTE_HOST} !^23.243.21.43
+# RewriteRule .* http://www.google.com [R=302,L]
+# RewriteCond %{HTTP_HOST} !^$
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTPS}s ^on(s)|
+# RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+##
+
+RewriteRule ^learning-center/?$ learning_center.php [L]
+RewriteRule ^learning-center/quiz/?$ quiz.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^logout$ logout.php [L]
+

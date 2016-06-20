@@ -1,0 +1,86 @@
+<?php 
+// e-juice			
+$collection_of_products_e_juice = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter(array (array('attribute'=> 'name', 'like' => '%E-Juice%'))) 
+				->addAttributeToFilter(array (array('attribute'=> 'name', 'nlike' => '%Tank%'))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+?>
+<h2>Chapter 7: E-Juice<span id="expand-all-07" class="expand-text expand-all">Expand</span></h2>
+<ul class="chapter">
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What is E-Juice</div>
+      <div style="display:none;" class="section_data">
+         <p>E-Juice, also referred to as e-liquid, is the substance used by vape pens to create vapor. Available in varying nicotine levels (0mg-24mg), e-juice is a great way for those looking to quit smoking cigarettes to get their nicotine fix while simultaneously weening themselves off cigarettes gradually. Aside from being available in varying nicotine strengths, e-juice also comes in many different flavors, and is comprised of varying levels of <span style="font-weight:bold;">vegetable glycerin (VG)</span> and <span style="font-weight:bold;">propylene glycol (PG)</span>.</p>
+         <p>While the standard ratio of VG/PG is 50/50, it is widely recognized that e-liquids higher in VG tend to be more natural, and “safer”. As a result, many manufactures now make e-juice with VG/PG ratios of 60/40, 70/30 and 80/20. </p>
+         <p>So isn’t e-juice made that is 100% VG? While vegetable glycerin is typically certified organic, it does not carry flavor very well. Because of this, PG is added, which has a lower viscosity than VG and carries flavor better. Contrary to what some people believe, propylene glycol (PG) is a main ingredient in asthma inhalers, and is perfectly safe to inhale when vaporized.</p>
+         <p>In addition to large e-juice manufacturing operations, there are now many smaller companies that produce premium “small-batch” e-juice. Premium e-liquid is higher quality, and typically comes in a glass bottle with a dripper, as opposed to a plastic bottle.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>E-Juice Brands</b></div>
+      <div style="display:none;" class="section_data">
+  		    <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_7">         
+               <li class="active"><a href="#ejuice" data-toggle="tab">E-Juice</a></li>               
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="ejuice">
+                  <ul class="nav nav-tabs" id="subtabs_7">
+                 <?php
+					  foreach($collection_of_products_e_juice as $product) {
+                  if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_7" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_7" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>     
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">                     
+                  <?php foreach($collection_of_products_e_juice as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_7">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 
+                                 <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 <div class="price" style="padding-bottom:20px; vertical-align:bottom;">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+            </div>
+         </div>         
+      </div>
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=7" class="quiz-link">Click Here to Take the Chapter Seven Quiz</a></div>
+
+   </li>
+   </ul>

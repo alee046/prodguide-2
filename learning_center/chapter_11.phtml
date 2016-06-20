@@ -1,0 +1,467 @@
+<?php 
+// e-juice			
+$collection_of_products_grinders = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('6')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_vape_cases = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('37')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_tight_vac = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter(array (array('attribute'=> 'name', 'like' => '%TightVac%')))
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_wax_containers = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('396')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_cleaning_supplies = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('307')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_aromatherapy = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('7')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_detox = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('271')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+$collection_of_products_smoke_buddy = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('162')))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);		
+
+?>
+<h2>Chapter 11: Accessories<span id="expand-all-11" class="expand-text expand-all">Expand</span></h2>
+<ul class="chapter">
+ <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Accessories</b></div>
+      <div style="display:none;" class="section_data">
+         <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_11">         
+               <li class="active"><a href="#grinders" data-toggle="tab">Grinders</a></li>
+               <li><a href="#vape-cases" data-toggle="tab">Vape Cases</a></li>
+               <li><a href="#tight-vac" data-toggle="tab">TightVac Containers</a></li>
+               <li><a href="#wax-containers" data-toggle="tab">Wax Containers</a></li>
+               <li><a href="#cleaning-supplies" data-toggle="tab">Cleaning Supplies</a></li>
+               <li><a href="#aromatherapy" data-toggle="tab">Aromatherapy</a></li>
+               <li><a href="#detox-products" data-toggle="tab">Detox Products</a></li>
+               <li><a href="#smoke-buddy" data-toggle="tab">Smoke Buddy</a></li>
+            </ul>
+            <div class="tab-content">
+             <div class="tab-pane active" id="grinders">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_grinders as $product) {
+                  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 						
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_grinders as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+             <div class="tab-pane" id="vape-cases">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_vape_cases as $product) {
+						  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_vape_cases as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+				 <div class="tab-pane" id="tight-vac">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_tight_vac as $product) {
+						  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_tight_vac as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+                	 <div class="tab-pane" id="wax-containers">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_wax_containers as $product) {
+						  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_wax_containers as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+               <div class="tab-pane" id="cleaning-supplies">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_cleaning_supplies as $product) {
+						  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_cleaning_supplies as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>  
+               <div class="tab-pane" id="aromatherapy">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_aromatherapy as $product) {
+						  		if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_aromatherapy as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>  
+               <div class="tab-pane" id="detox-products">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_detox as $product) {
+						  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_detox as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>              
+               <div class="tab-pane" id="smoke-buddy">
+                  <ul class="nav nav-tabs" id="subtabs_11">
+                 <?php
+					  foreach($collection_of_products_smoke_buddy as $product) {
+						  			if ($product->getLearningCenterFeatured() != NULL) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_11" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?> 
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_smoke_buddy as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_11">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() != NULL) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                  <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;">""</div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>               
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=11" class="quiz-link">Click Here to Take the Chapter Eleven Quiz</a></div>
+   </li>
+   </ul>

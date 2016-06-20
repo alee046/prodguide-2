@@ -1,0 +1,792 @@
+<?php
+/*chapter 6*/
+// pen, wax, wicked				
+$collection_of_products_wicked = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')				
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->addAttributeToSelect('wax_atomizer_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen 
+				->addAttributeToFilter( array (array('attribute'=> 'wax_atomizer_type','like' => '%147%'))) // wicked
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%30%'))) // wax				
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+				
+// pen, wax, ceramic dish			
+$collection_of_products_ceramic_dish = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')				
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->addAttributeToSelect('wax_atomizer_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addAttributeToFilter( array (array('attribute'=> 'wax_atomizer_type','like' => '%150%'))) //  ceramic dish
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%30%'))) // wax
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+							
+// pen, wax, ceramic rod				
+$collection_of_products_ceramic_rod = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')				
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->addAttributeToSelect('wax_atomizer_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addAttributeToFilter( array (array('attribute'=> 'wax_atomizer_type','like' => '%148%'))) // ceramic rod
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%30%'))) // wax				
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+				
+// pen, wax, quartz rod				
+$collection_of_products_quartz_rod = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')				
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->addAttributeToSelect('wax_atomizer_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addAttributeToFilter( array (array('attribute'=> 'wax_atomizer_type','like' => '%149%'))) // quartz rod
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%30%'))) // wax
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+				
+// pen, wax, e-nail			
+$collection_of_products_e_nail = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')				
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')			
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->addAttributeToSelect('wax_atomizer_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 136) // pen
+				->addAttributeToFilter( array (array('attribute'=> 'wax_atomizer_type','like' => '%151%'))) // e-nail
+				->addAttributeToFilter( array (array('attribute'=> 'vbg_vape_material','like' => '%30%'))) // wax
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(20)->setCurPage(1);
+?>
+
+<h2>Chapter 6: Wax Pen Vaporizers <span id="expand-all-06" class="expand-text expand-all">Expand</span></h2>
+
+<ul class="chapter">
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What is a Wax Pen?</div>
+      <div style="display:none;" class="section_data">
+      <p>Wax pen vaporizers are the fastest and easiest way to enjoy botanical extracts and concentrates on the go. Small enough to fit in your pocket, wax pens allow you to discreetly medicate at a moment's notice while you're out and about.</p>
+      <p>Wax pen vaporizers have come a long way since their introduction back in 2009. While the way in which these units function has more or less stayed the same, the technology utilized and materials they're constructed from have drastically changed. New features like advanced atomizers, variable voltage batteries and improved build quality have made the latest generation of wax pen vapes more versatile, reliable, and powerful than ever before.</p>
+      <p>To better understand and appreciate recent wax pen improvements and innovations, let's first take a look at how these units function.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>How Does a Wax Pen Work?</div>
+      <div style="display:none;" class="section_data">
+      <div style="text-align:center;"><img src="images/learning_center/pen_taken_apart.jpg" style="width:80%;"></div>
+      <p>For the most part, all wax pens consist of three components: a battery, an atomizer (heating chamber), and a mouthpiece. These parts are threaded (universal 510 threading is typically utilized), which allows them to be connected and disconnected from each other by simply twisting them on or off.</p>
+      <p>Unscrewing a pen's mouthpiece reveals the atomizer, which includes the chamber (or dish) in which concentrate is placed, as well as the heating coil. A dab tool is used to place wax on and around the heating element, being careful not to scrape or damage the coil during the loading process.</p>
+      <p>Once loaded, replace the mouthpiece and turn the unit on by clicking the power button five times consecutively (all vape pens utilize this 5-click locking mechanism to prevent accidental pocket firing). At this point, the pen is ready to be used. Inhale while pressing the power button (as this activates the heating coil). The size of the draw is easy to govern, as it's controlled by the length of time the power button is held as the pen is hit.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Wax Pen Atomizers</div>
+      <div style="display:none;" class="section_data">
+      <p>Wax atomizers come in three varieties: wicked, wickless (which refers to the material that the heating coil is wrapped around), and flat (also referred to as "donut", "terra", or "halo" style). Even though each type of atomizer is designed differently, they all employ a coil as the heat source.</p>
+      <p><b>Wicked:</b></p>
+      <div style="text-align:center;"><img src="images/learning_center/coil_2_1.jpg" style="width:40%;"></div>
+      <p>Ideal for lower viscosity (runny/liquidy) waxy oils, these types of atomizers utilize a heating coil wrapped around some sort of absorbent fiber wick material that soaks up oils and waxes, creating smooth, flavorful draws. Wicked atomizers come in the following varieties:</p>
+      <p><b>Wickless:</b></p>
+       <div style="text-align:center;"><img src="images/learning_center/coil_1_1.jpg" style="width:20.19%;"><img src="images/learning_center/coil_1_2.jpg" style="width:20%;"></div>      
+      <p>Best when used with higher viscosity (thicker/solid) wax concentrates, wickless rod atomizes are typically used by dabbers seeking more power at higher temperatures. Wickless rod atomizers come in the following varieties:</p>
+      <p><b>Flat Ceramic Dish:</b></p>
+       <div style="text-align:center;"><img src="images/learning_center/coil_2_2.jpg" style="width:40%;"></div>
+      <p> These newer style atomizers feature a flat ceramic dish, have no exposed wicks or coils, and are ideal for low temperature dabbing. Since wax doesn't come into direct contact with the heating coil - it burns much slower and tastes better - which makes donut style ceramic atomizers like this ideal for conserving your concentrates.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Advanced Atomizers</div>
+      <div style="display:none;" class="section_data">
+      <p>One of the biggest complaints about early wax pens was the "burnt" or "charred" taste you would sometimes experience, which could often be attributed to the residual burn-off that occurs once wax has melted and the coil is directly heating the ceramic rod (which is not a pleasant taste). This led to the recent introduction of higher quality materials like titanium coils and quartz crystal rods, which help improve flavor and taste.</p>
+      <p><b>Titanium Coils:</b></p>
+       
+      <p>While once rare, most manufacturers now construct atomizer coils from Titanium, which has a higher resistance than lower-grade materials used in the past. This allows coils to maintain a lower temperature while heating, resulting in less of a "burnt" taste and improved flavor.</p>
+      <p><b>Quartz Crystal Rods:</b></p>
+       <div style="text-align:center;"><img src="images/learning_center/coil_3_2.jpg" style="width:50%; margin-left:-36px;"></div>
+      <p>While ceramic rods were the industry standard for quite a while, manufacturers are now replacing standard ceramic with quartz crystal rods. Glass is more of an inert material than ceramic, which means wax burns cleaner and tastes better. Quartz crystal, however, is not porous, which means wax never has a chance to get absorbed. This not only helps improve taste (as you're only tasting the most recent dab load), but also helps conserve your concentrates (as every last drop of wax is being burned, not absorbed).</p>
+      <p><b>Triple Coils:</b></p>
+      <div style="text-align:center;"><img src="images/learning_center/coil_1_4.jpg" style="width:20%;"><img src="images/learning_center/coil_1_3.jpg" style="width:20.02%;"></div>
+      <p>For extreme dab enthusiasts looking for the ultimate in wax pen power, some manufacturers are now producing atomizers with three coils. The more coils, the faster wax will burn, and the more intense draws will be. Similar to an electric eNail in performance and efficiency, triple coil atomizers welt max almost instantaneously, which is ideal for dabbers seeking the ultimate hit - but not the best option for those looking to conserve their concentrates.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>510 Threading vs Magnetic Connection</div>
+      <div style="display:none;" class="section_data">
+      <p>Up until recently, all pen-style vaporizers utilized threaded connections, which allows each different component to be screwed on or off simply by twisting left or right. While there are a few different types of thread sizes, most manufacturers utilize 510 threading, which is considered to be the industry standard - and is often referred to as "universal".</p>
+      <p>However, some of the newest, most advanced wax pen designs have ditched traditional threading altogether for state-of-the-art magnetic connections:</p>
+      <div style="text-align:center;"><img src="images/learning_center/dr_dabber_aura.jpg" style="width:80%;"></div>
+      <p>Even though this is a very new technology, it shows great promise. Magnets not only make the process of replacing atomizers and charging your battery faster and less of a hassle, but they also won't wear down over time as much as standard threading.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Other Wax Devices</div>
+      <div style="display:none;" class="section_data">
+      <p>Traditional wax pens are now being joined by a whole new class of devices that can best be described as wax pen/portable vaporizer hybrids. Breaking the mold of traditional vape pens, the latest generation of dab devices (while difficult to categorize) feature fantastic functionality, and offer new ways to enjoy your favorite concentrates.</p>
+      <p><b>eRig:</b> Boasting the same type of high-powered performance one would expect from a electric eNail, the term "eRig" describes battery powered, portable units that feature a titanium nail in which wax is placed. Able to reach temperatures upwards of 700°F, concentrates melt on contact, which are then inhaled through an included water attachment, allowing you to moisturize and cool your hits. eRig's are an awesome alternative to traditional means of wax consumption, and are certain to become more common as time progresses.</p>
+      <p><b>Inverted Dabbers:</b> As the name suggests, these devices offer a unique way to enjoy wax - upside-down! Rather than loading wax into the chamber or atomizer itself, these units utilize a heating coil that protrudes outwards, that is meant to be "dipped" into a container or slab of wax. Users then inhale from the mouthpiece, which is located on the opposite end of the device. These "no-load pens" offer a great solution to the age-old issue commonly associated with wax - the mess. Inverted dabbers are hassle free, as you can simply "dip & dab".</p>
+      <p><b>Non-Pen Portables:</b> These units have more in common aesthetically with true portable vaporizers than pen-style vapes. Instead of utilizing an atomizer to heat wax, these battery-powered portable units employ more of a "skillet" design, which is completely free of wicks and coils. Concentrate is placed on the skillet, which heats instantly once activated. Vapor is then inhaled through a whip-draw delivery system. These non-pen portables offer familiar functionality for those more accustomed to herb vaporizers, and offer to nice change of pace from standard wax pens.</p>
+      </div>
+   </li>
+    <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Wax Pen Vaporizers</b></div>
+      <div style="display:none;" class="section_data">
+         <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_6">         
+               <li class="active"><a href="#wicked" data-toggle="tab">Wicked</a></li>
+               <li><a href="#ceramic-rod" data-toggle="tab">Ceramic Rod</a></li>
+               <li><a href="#quartz-rod" data-toggle="tab">Quartz Rod</a></li>
+               <li><a href="#ceramic-dish" data-toggle="tab">Ceramic Dish</a></li>
+               <li><a href="#e-nail" data-toggle="tab">E-Nail</a></li>
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="wicked">
+                  <ul class="nav nav-tabs" id="subtabs_6">
+                 <?php
+					  foreach($collection_of_products_wicked as $product) {
+                 				if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>       					  	
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_wicked as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_6">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>        
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+               <div class="tab-pane" id="ceramic-rod">
+                  <ul class="nav nav-tabs" id="subtabs_6">
+                      <?php foreach($collection_of_products_ceramic_rod as $product) { 
+										if ($product->getLearningCenterFeatured() == 1) { ?>
+										<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } else { ?>
+										<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } ?>       
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                    
+                     <?php foreach($collection_of_products_ceramic_rod as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }
+						   ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_6">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>       
+                  </div>
+               </div>
+               <div class="tab-pane" id="quartz-rod">
+                  <ul class="nav nav-tabs" id="subtabs_6">
+                      <?php foreach($collection_of_products_quartz_rod as $product) { 
+							 			if ($product->getLearningCenterFeatured() == 1) { ?>
+                              <li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                        <?php } else { ?>
+                              <li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                        <?php } ?>       
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                     <?php foreach($collection_of_products_quartz_rod as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }                       
+                     ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_6">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                          		<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                      </div>
+                     <?php } ?>  
+                  </div>
+               </div>
+               <div class="tab-pane" id="ceramic-dish">
+                  <ul class="nav nav-tabs" id="subtabs_6">
+                      <?php foreach($collection_of_products_ceramic_dish as $product) { 
+							 		if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>       
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                     <?php foreach($collection_of_products_ceramic_dish as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }                       
+                     ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_6">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                      </div>
+                     <?php } ?>  
+                  </div>
+               </div>
+                <div class="tab-pane" id="e-nail">
+                  <ul class="nav nav-tabs" id="subtabs_6">
+                      <?php foreach($collection_of_products_e_nail as $product) { 
+										if ($product->getLearningCenterFeatured() == 1) { ?>
+										<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } else { ?>
+										<li><a href="#<?=$product->getId(); ?>_6" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } ?>       
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                     <?php foreach($collection_of_products_e_nail as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }                       
+                     ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_6">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                      </div>
+                     <?php } ?>  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </li>
+   <li>
+     	<div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Comparison of Wax Pen Vaporizers</b></div>     
+      <div style="display:none" class="section_data comparison-wrapper">  
+      <div><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;"> = Recommended</div>
+      <div><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;"> = Discouraged</div>    
+         <div class="comparison-section">
+            <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>KandyPens Donuts vs KandyPens Galaxy</h3>
+            <div class="comparison-content">
+                 <div class="column">
+                     <h3 class="header"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">KandyPens Donuts</h3>
+                    <img src="<?=$base_url;?>catalog/product<?=$kpens_donuts;?>" style="width:265px;">
+                     <ul>
+                        <li>Coilless Ceramic Dish Atomizer</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Appearance</li>
+                        <li>Manufactured by KandyPens</li>
+                        <li>Price</li>
+                        <li>Temperature Control Battery</li>
+                        <li>Titanium Coils</li>
+                        <li>Lifetime Warranty</li>
+                        <li>510 Threaded</li>
+                        <li>Multiple Color Options</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">KandyPens Galaxy</h3>
+                    <img src="<?=$base_url;?>catalog/product<?=$kpens_galaxy;?>" style="width:265px;">
+                     <ul>
+                        <li>Quartz Crystal Rod Atomizer</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div><br>
+							<div class="bottom-line">The Galaxy includes a quartz rod atomizer, while the Donuts includes a ceramic dish atomizer. Atomizers of each are interchangeable, and both are high quality units from KandyPens.</div>
+                 </div>
+             </div>
+          </div>          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>#ThisThingRips R Series 2 vs #ThisThingRips OG Four 2.0</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">R Series 2</h3>
+                     <img src="http://www.vapornation.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/t/stok-r2-series-vaporizer-2.jpg" style="width:265px;">
+                     <ul>
+                        <li>Ceramic Rod Atomizer</li>
+                        <li>Includes Discreet Pen Cap</li>
+                        <li>More Affordable</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by #ThisThingRips</li>
+                        <li>Appearance</li>
+                        <li>Calibrated Low-Temp Coil</li>
+                        <li>Visual Polycarbonate Heating Chamber</li>
+                        <li>510 Threaded</li>
+                        <li>650mAh Battery</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">OG Four 2.0</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$og_four_2;?>" style="width:265px;">
+                     <ul>
+                        <li>Lava Quartz Rod Atomizer</li>
+                        <li>Does Not Include Cap</li>
+                        <li>More Expensive</li>
+                     </ul>
+                 </div>
+                 <div>
+                    <div class="bottom-line-header">The Bottom Line:</div>
+                    <div class="bottom-line">The Series 2 includes a ceramic rod atomizer, while the OG Four 2.0 includes a lava-quartz atomizer. Both are high quality units from #ThisThingRips.</div>
+                 </div>
+             </div>
+          </div>          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Dr. Dabber Aura vs KandyPens Gravity</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Aura</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$dr_dabber_aura;?>" style="width:265px;">
+                     <ul>
+                        <li>Magnetic Connections (Limited Compatibility)</li>
+                        <li>1 Year Warranty</li>
+                        <li>3 Heat Settings</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Includes Quartz Crystal Rod & Coilless Ceramic Atomizers</li>
+                        <li>Appearance</li>
+                        <li>Temperature Control Battery</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Gravity</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$kpens_gravity;?>" style="width:265px;">
+                     <ul>
+                        <li>510 Threading</li>
+                        <li>Lifetime Warranty</li>
+                        <li>4 Heat Settings</li>                        
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are similar in appearance and include similar atomizers, but the Gravity is covered by a lifetime warranty (compared to the Aura’s 1 year warranty).</div>
+                 </div>
+             </div>
+          </div>          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Dr. Dabber Aura vs Dr. Dabber Ghost</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Aura</h3>
+                      <img src="<?=$base_url;?>catalog/product<?=$dr_dabber_aura;?>" style="width:265px;">
+                     <ul>
+                        <li>Includes Multiple Advanced Atomizers</li>
+                        <li>Magnetic Connections</li>
+                        <li>Temperature Control Battery</li>
+                        <li>More Expensive</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by Dr. Dabber</li>
+                        <li>Titanium Coils</li>                        
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Ghost</h3>
+                      <img src="<?=$base_url;?>catalog/product<?=$dr_dabber_ghost;?>" style="width:265px;">
+                     <ul>
+                        <li>Includes Standard Threaded Atomizer</li>
+                        <li>510 Threaded</li>
+                        <li>Single Fixed Temperature Setting</li>
+                        <li>More Affordable</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are manufactured by Dr. Dabber, but the Aura has more advanced features.</div>
+                 </div>   
+             </div>
+          </div>          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>#ThisThingRips R Series 2 vs KandyPens Executive</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">R Series 2</h3>
+                     <img src="http://www.vapornation.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/t/stok-r2-series-vaporizer-2.jpg" style="width:265px;">
+                     <ul>
+                        <li>90 Day Warranty</li>
+                        <li>Single Ceramic Rod Atomizer</li>
+                        <li>More Affordable</li>
+                        <li>Single Color Option</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Ceramic Coil Atomizer</li>
+                        <li>Modern, Stylish Design</li>
+                        <li>Multiple Color Options</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Executive</h3>
+                      <img src="<?=$base_url;?>catalog/product<?=$executive;?>" style="width:265px;">
+                     <ul>
+                        <li>Lifetime Warranty</li>
+                        <li>Dual Ceramic Rod Atomizer</li>
+                        <li>More Expensive</li>
+                        <li>Multiple Color Options</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are high quality units that feature ceramic rod atomizers.</div>
+                 </div>
+             </div>
+          </div>          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Cloud Pen 2.0 vs Cloud Pen 3.0</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">2.0</h3>
+                      <img src="<?=$base_url;?>catalog/product<?=$cloud_pen_2;?>" style="width:265px;">
+                     <ul>
+                        <li>Only Compatible w/ Wax</li>
+                        <li>Includes 1 Atomizer</li>
+                        <li>More Affordable</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by Cloud Pen</li>
+                        <li>Dual Ceramic Rod Atomizer</li>
+                        <li>Size & Design</li>
+                        <li>Multiple Color Options</li>
+                        <li>650mAh Elips Battery</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">3.0</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$cloud_pen_3;?>" style="width:265px;">
+                     <ul>
+                        <li>Compatible w/ Herbs + Wax</li>
+                        <li>Includes Multiple Atomizers & Attachments</li>
+                        <li>More Expensive</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">The Cloud Pen 2.0 is only compatible wax, while the 3.0 is compatible with both herbs + wax. Both are high quality units manufactured by Cloud Pen.</div>
+                 </div>
+             </div>
+          </div>
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Pulsar Ninja V4 vs Greco Science microG</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Ninja V4</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$ninja_v_4;?>" style="width:265px;">
+                     <ul>
+                        <li>Coilless Ceramic Dish Atomizer (Higher Quality)</li>
+                        <li>More Affordable</li>
+                        <li>Manufactured by Pulsar</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Size & Design</li>                        
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">microG</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$micro_g;?>" style="width:265px;">
+                     <ul>
+                        <li>Wicked Atomizer (Lesser Quality)</li>                        
+                        <li>More Expensive</li>
+                        <li>Manufactured by Grenco Science</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both utilize elips style batteries, but the Ninja V4 features a more advanced coilless ceramic dish atomizer (compared to the microG’s wicked atomizer).</div>
+                 </div>
+             </div>
+          </div>
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Grenco Science microG vs Grenco Science G Pen</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">microG</h3>
+                    <img src="<?=$base_url;?>catalog/product<?=$micro_g;?>" style="width:265px;">
+                     <ul>
+                        <li>Elips Battery</li>
+                        <li>Wicked Atomizer</li>
+                        <li>More Affordable</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by Grenco Science</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">G Pen</h3>
+                    <img src="<?=$base_url;?>catalog/product<?=$grenco_g_pen;?>" style="width:265px;">
+                     <ul>
+                        <li>Standard Battery</li>
+                        <li>Ceramic Rod Atomizer</li>
+                        <li>More Expensive</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are manufactured by Grenco Science.</div>
+                 </div>
+             </div>
+          </div>
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Atmos Kiln vs Pulsar Sirius</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Kiln</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$atmos_kiln;?>" style="width:265px;">
+                     <ul>
+                        <li>Manufactured by Atmos</li>
+                        <li>More Expensive</li>
+                        <li>Longer Warranty</li>
+                        <li>Solid Tank</li>
+                        <li>Two Color Options</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Coilless Ceramic Dish Atomizer</li>
+                        <li>Size & Design</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Sirius</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$pulsar_sirius;?>" style="width:265px;">
+                     <ul>
+                        <li>Manufactured by Pulsar</li>
+                        <li>More Affordable</li>
+                        <li>Shorter Warranty</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are high quality units that feature coilless ceramic atomizers.</div>
+                 </div>
+             </div>
+          </div>          
+      </div>    
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=6" class="quiz-link">Click Here to Take the Chapter Six Quiz</a></div>
+   </li>   
+</ul>

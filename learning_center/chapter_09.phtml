@@ -1,0 +1,135 @@
+<?php 
+$collection_of_products_mod_1 = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter(array (array('attribute'=> 'name', 'like' => '%Mod%'))) 
+				->addAttributeToFilter(array (array('attribute'=> 'name', 'nlike' => '%Tank%'))) 
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(1);
+$collection_of_products_mod_2 = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('*')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3'))))				
+				->addFieldToFilter('vbg_vape_type', 146) 
+				->addAttributeToFilter('vbg_vape_material', 29)
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(1);		
+	
+ $merged_ids = array_merge($collection_of_products_mod_1->getAllIds(), $collection_of_products_mod_2->getAllIds());
+ $collection_of_products_mods = Mage::getResourceModel('catalog/product_collection')
+												->addFieldToFilter('entity_id', array('in' => $merged_ids))
+												->addAttributeToSelect('*')
+												->addAttributeToSort('learning_center_sort_order', 'ASC')
+												->setPageSize(40)->setCurPage(1);
+?>
+<h2>Chapter 9: Mods <span id="expand-all-09" class="expand-text expand-all">Expand</span></h2>
+<ul class="chapter">
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What are Mods?</div>
+      <div style="display:none;" class="section_data">
+         <p>Mods are high-powered versions of e-juice pen. Mods have become very popular among vaporizer enthusiasts due to their customizable nature, and their ability produce massive vapor clouds. A mod, either mechanical or electronic, consists of two main parts: a battery and a tank. The specifications and capabilities of batteries and tanks can vary greatly depending on the type of mod. With so many options and builds to choose from, mods offer a “DIY” type of satisfaction for users who want more power than typical e-juice vaporizers can provide.</p>
+         
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Different Types of Mods</div>
+      <div style="display:none;" class="section_data">
+         <p>Mods come in two distinct varieties: mechanical or electronic. While both produce vapor through a battery and tank system, each functions very differently.</p>
+         <p><b>Mechanical Mods:</b> Mechanical mods (sometimes referred to as mech mods), lack any sort of electronics and draw a constant amount of power through a lithium-ion battery within the body of device. While once extremely popular, mechanical mods have recently fallen out of favor with most users due to the fact that they are unregulated, meaning there are no restrictions on its power output. Mech mods lack any type of safeguards, and are recommended to only be used by experts.</p>
+         <p><b>Electronic Mods:</b> Electronic mods are the most popular type of mod device, and feature advanced internal electronics which allow for variable power adjustment and control of Ohms, Wattage and Voltage. In addition to giving the user more control over their vaporizing experiencing, these units typically feature OLED display screens, as well as a multitude of advanced safety feature</p> 
+         
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>How do Mods Work?</div>
+      <div style="display:none;" class="section_data">
+         <p>Mods operate very similarly to standard e-juice pen vaporizers, utilizing a battery and tank system. Like a standard e-juice pen vaporizer, the battery of a mod activates the tanks atomizer, which then heats and vaporizers the e-juice in the tank.</p>
+         <p>The big difference between mods and standard e-juice pens is the amount of power their batteries supply, and the level of electrical resistance that their atomizers are capable of handling. Battery power is measured in <b>volts</b> and <b>wattage</b>, while atomizer resistance is measured in <b>ohms</b> (typically signified with the <b>Ω</b> symbol).</p>
+         <p>All electronic mods include specifications of their recommended and maximum power output (volts and wattage), as well as the atomizer resistance range (ohms) that they are capable of handling.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Atomizer Resistance Levels</div>
+      <div style="display:none;" class="section_data">
+      	<p>Mod atomizers (also referred to as coils or coil heads) contain a wicking material (to absorb e-juice), as well as a wire or coil (which heats the e-juice soaked wick to create vapor). Atomizers feature varying resistance levels depending on the type of wire they utilize. Certain wire is rated to handle lower resistance levels than others. The resistance of a wire is measured in ohms (Ω).</p>
+      	<p><b>Standard Resistance Atomizers:</b> Atomizers that utilize coils rated for resistance levels of 1.0 Ω or above are referred to as standard resistance atomizers. These atomizers are the same type utilized by standard e-juice pen vaporizers, and are capable of producing what would be considered “average” sized vapor clouds.</p>
+         <p><b>Sub-Ohm Resistance Atomizers:</b> Atomizers that utilize coils rated for resistance levels below 1.0 Ω are referred to as sub-ohm resistance atomizers. Most mods accommodate sub-ohm resistance vaping, are typically designed specifically with this function in mind. Atomizers, tanks and batteries that are rated for sub-ohm resistance vaping are capable of producing what would be considered “huge” sized vapor clouds. The lower the resistance, the bigger the clouds.</p>
+      </div>
+   </li>
+
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Mod Battery / Tank / Atomizer Compatibility</div>
+      <div style="display:none;" class="section_data">
+         <p>As all mod batteries, tanks and atomizers are rated for different power outputs and resistance levels, it’s important to ensure that each part of the mod (if purchased separately) are compatible with each other.</p>
+         <p>For example, an Innokin iTaste MVP 3.0 has a maximum power output of 30W and is compatible with atomizer resistance levels between 0.4 Ω – 2.5 Ω. A Kanger Subtank Mini Tank would be compatible with this battery, as the Subtank Mini is equipped with a 0.5 Ω atomizer that is rated for a 15-30W power output. </p>
+         <p>Alternatively, a tank like the Horizon Arctic Sub-Ohm Tank includes three different atomizers of varying resistance levels (0.2 Ω, 0.5 Ω, and 1.2 Ω). This tank would be able to be used with the Innokin iTaste MVP 3.0 when used with 0.5 Ω and 1.2 Ω atomizers, but would not be compatible when used with the 0.2 Ω atomizers (as the iTaste MVP 3.0 battery is only compatible with atomizer resistances between 0.4 Ω – 2.5 Ω).</p>
+         <p>If all components of a mod are not compatible with each other, the unit will function in an unsafe manner, or not function at all.</p>
+      </div>
+   </li>
+    <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Mods</b></div>
+      <div style="display:none;" class="section_data">
+  		    <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_9">         
+               <li class="active"><a href="#mods" data-toggle="tab">Mods</a></li>               
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="mods">
+                  <ul class="nav nav-tabs" id="subtabs_9">
+                 <?php
+					  foreach($collection_of_products_mods as $product) {
+                  			if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_9" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_9" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>    
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">                     
+                  <?php foreach($collection_of_products_mods as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_9">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 
+                                 <?php if ($product_features[0] != "") { ?>      
+                                       <ul>
+                                       <?php foreach($product_features as $feature){?>
+                                       	
+                                          <li><?=$feature?></li>
+                                       <?php } ?>
+                                       </ul>
+                                 <?php } ?>
+                                 <div class="price" style="padding-bottom:20px; vertical-align:bottom;">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                              	<div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           	</div>
+                           	<div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+            </div>
+         </div>         
+      </div>
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=9" class="quiz-link">Click Here to Take the Chapter Nine Quiz</a></div>
+
+   </li>
+   
+</ul>

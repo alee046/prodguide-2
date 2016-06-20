@@ -1,0 +1,595 @@
+<?php
+// portables, precise temp				
+$collection_of_products_precise = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')				
+				->addAttributeToSelect('temperature_control')
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 32) // portable
+				->addFieldToFilter('temperature_control', 131) // precise
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(1);
+				
+// portables, preset temp				
+$collection_of_products_preset = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')				
+				->addAttributeToSelect('temperature_control')
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addFieldToFilter('vbg_vape_type', 32) // portable
+				->addFieldToFilter('temperature_control', 132)  // preset
+				->addAttributeToSort('learning_center_sort_order', 'ASC')
+				->setPageSize(30)->setCurPage(1);
+
+// portables, no temp				
+$collection_of_products_none = Mage::getModel('catalog/product')->getCollection()
+				->addAttributeToSelect('additional_info')
+				->addAttributeToSelect('category_id')
+				->addAttributeToSelect('heatup_time')
+				->addAttributeToSelect('image')
+				->addAttributeToSelect('learning_center_featured')
+				->addAttributeToSelect('learning_center_sort_order')
+				->addAttributeToSelect('name')
+				->addAttributeToSelect('product_features')
+				->addAttributeToSelect('status')				
+				->addAttributeToSelect('temperature_control')
+				->addAttributeToSelect('vbg_vape_material')
+				->addAttributeToSelect('vbg_vape_type')
+				->joinField('category_id', 'catalog/category_product', 'category_id', 'product_id = entity_id', null, 'left')
+				->addAttributeToFilter('status',array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED))
+				->addAttributeToFilter('category_id', array(array('in' => array('3')))) // vaporizer
+				->addAttributeToFilter('temperature_control', 140)	 // no temp control			
+				->addFieldToFilter('vbg_vape_type', 32)	// portable		
+				->addAttributeToSort('learning_center_sort_order', 'ASC')	
+				->setPageSize(30)->setCurPage(1);	
+	?>
+<h2>Chapter 3: Portable Vaporizers <span id="expand-all-03" class="expand-text expand-all">Expand</span></h2>
+
+<ul class="chapter">
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What is a Portable Vaporizer?</div>
+      <div style="display:none;" class="section_data">
+         <p>Portable vaporizers are devices that allow you to vaporize herbs on-the-go. Utilizing compact and durable designs that are conducive to road-use, portables typically offer multiple temperature options and heat settings. By combining pocket-sized convenience with advanced heating systems and enhanced versatility, portable vaporizers have become the preferred method of cannabis consumption for many people looking for a healthier alternative to traditional means. While portable vaporizers can’t quite match the power and dependability of desktop units, they do provide a quick and convenient way to medicate in a multitude of different situations and settings.</p>
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>How Do Portable Vaporizers Work?</div>
+      <div style="display:none;" class="section_data">
+         <p>Unlike pen-style units that burn material by conduction, portable vaporizers are just that – actual vaporizers – which essentially “cook” loaded material through convection (although oftentimes combined with an element of conduction). Since the packed material never comes into direct contact with the heating element, very little combustion takes place, resulting in true vapor and minimal smoke.
+Because your dry material never comes into direct contact with the heating source, but is instead cooked below the point of combustion, the result is the production of pure vapor, with no smoke or harmful byproducts. This is what we refer to as a true vaporization experience, and is when the great benefits of vaporizing can really be enjoyed.
+</p>
+         <h3>Getting Started</h3>
+         <p>The heating chamber (also referred to as an herb chamber or oven) is the area of the vaporizer in which dry blends are packed. Heating chambers can be constructed from many different materials, including stainless steel, ceramic or even glass. The material from which the chamber is constructed from will ultimately have an effect on the taste and consistency of the vapor produced.</p>
+         <p>When packing herbs into the chamber, it’s best to finely grind your dry material, packing the chamber full – but not tight.  Leaving the pack loose enough allows air to flow freely through the herbs and heat them evenly.</p>
+         <p>When using a portable vaporizer, dry material is also placed directly into the chamber. However, unlike an herb pen, the heating element is not located in the chamber itself, but is instead located in the housing of the unit. Upon inhalation, hot air is pulled from the heating element, through the air-path (or vapor path) and into the herb chamber. This is the point at which convection occurs.</p>
+         <p>Also unlike pen-style units, portable vaporizers do not require the power button to be pressed in order to activate the heating element. Instead, portables heat to a desired temperature which stays constant for the duration of the session, much like an oven.</p>
+         <h3>Temperature Settings / Heat Options</h3>
+         <p>Now that the chamber is packed full of green goodness, it’s time to set your vape to the optimal temperature. Heat settings differ from unit to unit, but for the most part, they usually fall between 300° - 400°F. Depending on the device, there can be as few as one preset optimized heat setting, or upwards to ten on more advanced units. While many (perhaps most) portables come equipped with several different heat settings (usually signified by different colored LED lights), there are many units nowadays that offer precise digital temperature control, allowing for a finely tailored vaporization experience.</p>
+         <p>A few different factors should be taken into account when deciding on what temperature at which to vaporize. Lower temperatures are associated with light vapor, and are ideal for herbs with low moisture levels. At lower temperatures, vapor clouds won’t be as large or pronounced, but the effects will still be felt. </p>
+         <p>Alternatively, higher temperatures will produce thicker, hotter vapor, and are recommended for herbs with higher moisture levels. Vapor clouds produced between 375° - 400°F will be larger and more robust. However, the closer to 400°F you get, the higher the risk of combustion, so a general rule of thumb is to stay in the neighborhood of 350° - 375°. Vaporizing within this temperature range will give you the best results.</p>
+         <p>To summarize, heating herbs at a lower temperature will produce lighter, smoother vapor. Alternatively, heating herbs at a higher temperature will produce larger, more robust clouds.</p>
+      </div>
+   </li>
+   <li>
+   	<div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Portable Vaporizer Features</div>
+      <div style="display:none;" class="section_data">
+      <p><span style="font-weight:bold;">Compatibility: </span>Most portable vaporizers are designed specifically for dry herbs, although some do offer dual-functionality that allows them to also be used with wax concentrates. Portables that </p>
+      <p><span style="font-weight:bold;">Heating Method: </span>Portable vaporizers heat herbs either through <span style="font-weight:bold;">conduction, convection,</span> or a combination of <span style="font-weight:bold;">conduction/convection.</span> </p>
+      <p><span style="font-weight:bold;">Temperature Control: </span>Portables are equipped with either multiple preset heat settings (typically 3-5), or precise digital temperature control.</p>
+      <p><span style="font-weight:bold;">Battery Type: </span>The battery that powers a portable vaporizer is either embedded into the unit, or is removable and able to be replaced.</p>
+      <p><span style="font-weight:bold;">Power Source: </span>While most portable vaporizers are battery operated, there a handful of units that don’t rely on a battery power, instead using butane or an indirect flame to heat dry material.</p>
+      </div>
+   </li>
+   <li>
+   	<div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>What is a Rebrand?</div>
+      <div style="display:none;" class="section_data">
+      <p>Rebrands (also called clones) are common in the vaporizer industry. A rebrand is essentially a vaporizer with no propriety features that is produced for several different companies. These units oftentimes look identical to each other, and are just named something different with color and logo variances. Other than cosmetic differences, these units are exactly the same at their core and function identically.</p>
+      <p>Even though there is nothing technically different from one rebrand compared to another, their prices and warranties differ from unit to unit depending on the company they are produced for. It is also important to note that while a mouthpiece from one company’s rebrand should fit another, this isn’t always the case due to slight variances in the manufacturing process.</p>
+      <p>Rebrands are a relatively new thing in the vaporizer industry, one of the first being the wave of clones that replicated the G Pro portable vaporizer from Grenco Science (G Pen). Since then, it’s becoming more and more common for companies to sell rebranded units, as it all but eliminates the need to spend time and money in research and development.</p>
+      <h3>POPULAR REBRANDS</h3>
+      <div><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;"> = Recommended</div>
+      <div><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;"> = Discouraged</div>
+      <div class="rebrands-section">
+         <div class="rebrand recommend">
+         	<img src="<?=$base_url;?>catalog/product<?=$k_vape;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">K-Vape</div>
+         </div>
+         <div class="rebrand recommend">
+         	<img src="http://www.vapornation.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/t/i/titan.jpg" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Titan</div>
+         </div>
+         <div class="rebrand discourage">
+         	<img src="<?=$base_url;?>catalog/product<?=$g_pro;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">G Pro</div>
+         </div>         
+         <div class="rebrand discourage">
+         	<img src="<?=$base_url;?>catalog/product<?=$lux;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Lux</div>
+         </div>
+         
+      </div>
+      
+      <div class="rebrands-section">
+      	<div class="rebrand recommend">
+         	<img src="<?=$base_url;?>catalog/product<?=$k_vape_micro;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">K-Vape Micro DX</div>
+         </div>
+         <div class="rebrand recommend">
+         	<img src="<?=$base_url;?>catalog/product<?=$cloud_chloris;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Cloud Pen Chloris</div>
+         </div>
+         <div class="rebrand recommend">
+         	<img src="<?=$base_url;?>catalog/product<?=$cloud_galaxy;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Cloud V Galaxy</div>
+         </div>
+         <div class="rebrand recommend">
+         	<img src="http://www.vapornation.com/media/catalog/product/cache/5/image/500x500/9df78eab33525d08d6e5fb8d27136e95/a/t/atmos-vicod-vaporizer-unit.jpg" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Atmos Vicod</div>
+         </div>
+         <div class="rebrand discourage">
+         	<img src="<?=$base_url;?>catalog/product<?=$wulf_sx;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Wulf Vape SX</div>
+         </div>         
+      </div>
+      
+      <div class="rebrands-section">
+      	<div class="rebrand recommend">
+         	<img src="<?=$base_url;?>catalog/product<?=$atmos_vicod_g5;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Atmos Vicod 5G</div>
+         </div>
+         <div class="rebrand recommend">   
+         	<img src="<?=$base_url;?>catalog/product<?=$pulsar_buzz;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Pulsar Buzz</div>
+         </div>   
+      </div>
+      
+      <div class="rebrands-section">
+         <div class="rebrand recommend"> 
+      		<img src="<?=$base_url;?>catalog/product<?=$pulsar_hand_enail;?>" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Pulsar Hand E-Nail</div>
+         </div>   
+      	<div class="rebrand discourage">
+      		<img src="http://www.vapornation.com/media/catalog/product/cache/5/image/500x500/9df78eab33525d08d6e5fb8d27136e95/d/r/dr-dabber-boost-e-rig.jpg" style="width:150px;">
+            <div class="rebrand-name"><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Dr. Dabber Boost</div>
+     		</div>
+      </div>
+      
+      
+      
+      </div>
+   </li>
+   <li>
+      <div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Portable Vaporizers</b></div>
+      <div style="display:none;" class="section_data">
+         <div class="tabcontainer">
+            <ul class="nav nav-tabs" id="tabs_3">         
+               <li class="active"><a href="#preset" data-toggle="tab">Preset Temperature</a></li>
+               <li><a href="#precise" data-toggle="tab">Precise Temperature</a></li>
+               <li><a href="#none" data-toggle="tab">Fixed Temperature</a></li>
+            </ul>
+            <div class="tab-content">
+               <div class="tab-pane active" id="preset">
+                  <ul class="nav nav-tabs" id="subtabs_3">
+                 <?php
+					  foreach($collection_of_products_preset as $product) {
+						  			if ($product->getLearningCenterFeatured() == 1) { ?>
+                  			<li><a href="#<?=$product->getId(); ?>_3" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+                   	<?php } else { ?>
+                     		<li><a href="#<?=$product->getId(); ?>_3" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+              		 	<?php } ?>                 
+					  
+                 <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                  <?php foreach($collection_of_products_preset as $product) {  
+                     $product_features = [];
+                     foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                        $product_features[] = $product_feature;
+                     } 
+                  ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_3">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>        
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>  
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           </div>
+                           <div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>     
+               
+                  </div>
+               </div>
+               <div class="tab-pane" id="precise">
+                  <ul class="nav nav-tabs" id="subtabs_3">
+                     <?php foreach($collection_of_products_precise as $product) { 
+										if ($product->getLearningCenterFeatured() == 1) { ?>
+										<li><a href="#<?=$product->getId(); ?>_3" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } else { ?>
+										<li><a href="#<?=$product->getId(); ?>_3" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } ?>
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                    
+                     <?php foreach($collection_of_products_precise as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }
+						   ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_3">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                           </div>
+                           <div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                     </div> 
+                     <?php } ?>       
+                  </div>
+               </div>
+               <div class="tab-pane" id="none">
+                  <ul class="nav nav-tabs" id="subtabs_3">
+                      <?php foreach($collection_of_products_none as $product) { 
+										if ($product->getLearningCenterFeatured() == 1) { ?>
+										<li><a href="#<?=$product->getId(); ?>_3" data-toggle="tab"><img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star.png" style="display:inline; margin-top:-3px;"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } else { ?>
+										<li><a href="#<?=$product->getId(); ?>_3" data-toggle="tab"><?=str_replace("Vaporizer","",$product->getName()); ?></a></li>
+								<?php } ?>
+                      <?php } ?>
+                  </ul>
+                  <div class="tab-content">
+                     <?php foreach($collection_of_products_none as $product) {  
+                        $product_features = [];
+                        foreach(explode("\n", trim($product->getProductFeatures())) as $product_feature) {
+                           $product_features[] = $product_feature;
+                        }                       
+                     ?>
+                     <div class="tab-pane fade" id="<?=$product->getId();?>_3">
+                         <div class="row">
+                      <?php if ($product->getLearningCenterFeatured() == 1) { ?>
+                      	<img src="http://www.vapornation.com/skin/frontend/vapornation/default/images/product_page/star2.png" style="display:inline-block; float:right; margin: 10px 13px -60px 0px;">
+                       <?php } ?>
+                        <div class="outer">
+                              <div class="inner image"><img src="<?=$product->getImageUrl();?>" style="width:75%;"></div>
+                              <div class="inner info">
+                                 <h3><?=$product->getName();?></h3>
+                                 <?php
+                                    Mage::register('product', $product);
+                                    $icons = Mage::getSingleton('core/layout')->createBlock('core/template')
+                                                                              ->setTemplate('vn_productpage/view/header_icons.phtml')
+                                                                              ->setData($data)
+                                                                              ->toHtml();
+                                    echo '<div class="header-icons">'.$icons.'</div>';
+                                    Mage::unregister('product');	
+                                 ?>             
+                                 <ul>
+                                 <?php foreach($product_features as $feature){?>
+                                    <li><?=$feature?></li>
+                                 <?php } ?>
+                                 </ul>
+                                 <div class="price">Retail Price: $<?=number_format($product->getSpecialPrice(), 2);?></div>
+                                 <div class="view-pdf"><a href="http://www.vapornation.com/prodguide/inc/pdf_generator.php?inline_or_download=I&product_ids=<?=$product->getId();?>">View PDF</a></div>  
+                                 <div class="show-product-description" data-product-id="<?=$product->getId();?>" data-product-attribute="description">Show Product Description</div>
+                              </div>
+                              <div class="short-description" style="display:none; clear:both;"></div>
+                           </div>  
+                         </div>
+                      </div>
+                     <?php } ?>  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </li>
+   <li>
+     	<div class="section_title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span><b>Comparison of Portable Vaporizers</b></div>
+      <div style="display:none" class="section_data comparison-wrapper">
+      <div><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;"> = Recommended</div>
+      <div><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;"> = Discouraged</div>      
+         <div class="comparison-section">
+            <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>KandyPens K-Vape vs Grenco Science G Pro</h3>
+            <div class="comparison-content">
+                 <div class="column">
+                     <h3 class="header"><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">K-Vape</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$k_vape;?>" style="width:265px;">
+                     <ul>
+                        <li>Lifetime Warranty</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Size & Design (Identical Rebrand)</li>
+                        <li>Price Point</li>
+                        <li>3 Preset Temperature Settings</li>
+                        <li>Stainless Steel Herb Chamber</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">G Pro</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$g_pro;?>" style="width:265px;">
+                     <ul>
+                        <li>1 Year Warranty</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div><br>
+							<div class="bottom-line">These are rebranded units, so they are nearly identical. However, the K-Vape is covered under a lifetime warranty, as opposed to the G Pro which is only covered for a year.</div>
+                 </div>
+             </div>
+          </div>
+          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Arizer Air vs Arizer Solo</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Air</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$arizer_air;?>" style="width:265px;">
+                     <ul>
+                        <li>Smaller and Sleeker</li>
+                        <li>Powered by Removeable/Replaceable Battery</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by Arizer</li>
+                        <li>Preset Temperature Settings</li>
+                        <li>Glass Draw-Stem</li>
+                        <li>Ceramic Heating Element</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Solo</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$arizer_solo;?>" style="width:265px;">
+                     <ul>
+                        <li>Larger (Not as Easy to Conceal)</li>
+                        <li>Powered by an Embedded Battery (Difficult to Replace)</li>
+                     </ul>
+                 </div>
+                 <div>
+                    <div class="bottom-line-header">The Bottom Line:</div>
+                    <div class="bottom-line">Both are high quality vaporizers with similar features, so it just depends on the customers preference.</div>
+                 </div>
+             </div>
+          </div>
+          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Volcano Crafty vs Volcano Mighty</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Crafty</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$crafty;?>" style="width:265px;">
+                     <ul>
+                        <li>Smaller and More Compact</li>
+                        <li>Powered by Single Lithium-Ion Battery</li>
+                        <li>Two Preset Temp Settings w/ Precise Adjustment Available Through Smartphone App</li>
+                        <li>No Digital Display</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by Storz & Bickel (Volcano)</li>
+                        <li>Combination Convection/Conduction Heating Method</li>
+                        <li>Low Draw Resistance</li>
+                        <li>Design</li>                        
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Mighty</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$mighty;?>" style="width:265px;">
+                     <ul>
+                        <li>Larger (Not as Easy to Conceal)</li>
+                        <li>Powered by Dual Lithium-Ion Batteries (Longer Battery Life)</li>
+                        <li>Precise Temperature Adjustment</li>
+                        <li>Digital Display</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are considered the “best of the best” when it comes to portable vaporizers and function very similarly, so it just depends on the customers preference.</div>
+                 </div>
+             </div>
+          </div>
+          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>DaVinci vs DaVinci Ascent</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">DaVinci</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$davinci;?>" style="width:265px;">
+                     <ul>
+                        <li>'Flexistraw' Mouthpiece</li>
+                        <li>Non-Glass Vapor Path</li>
+                        <li>Old-School "Boxy" Shape</li>
+                        <li>No Water Filtration Attachments</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Manufactured by DaVinci</li>
+                        <li>Precise Digital Temperature Control</li>
+                        <li>Digital Display</li>
+                        <li>Compatible w/ Herbs & Wax</li>
+                        <li>Multiple Colors & Designs</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Ascent</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$ascent;?>" style="width:265px;">
+                     <ul>
+                        <li>Glass Mouthpiece</li>
+                        <li>Glass Vapor Path</li>
+                        <li>Sleek, Modern Design</li>
+                        <li>Water Filtration Attachments Available</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">Both are high quality units with great dependability, so it just depends on the customers preference.</div>
+                 </div>   
+             </div>
+          </div>
+          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>Vapir Prima vs PAX 2</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">Prima</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$prima;?>" style="width:265px;">
+                     <ul>
+                        <li>Powered by Removable/Replaceable Battery</li>
+                        <li>Removable Stainless Steel Vapor Path (Easy to Clean)</li>
+                        <li>Compatible w/ Herbs & Wax</li>
+                        <li>More Affordable</li>
+                        <li>Water Filtration Kit Available</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>4 Preset Temperature Settings</li>
+                        <li>Modern, Stylish Design</li>
+                        <li>Multiple Color Options</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">PAX 2</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$pax_2;?>" style="width:265px;">
+                     <ul>
+                        <li>Powered by Embedded Battery (Difficult to Replace)</li>
+                        <li>Not Removable Vapor Path (Hard to Clean)</li>
+                        <li>Only Compatible w/ Herbs</li>
+                        <li>More Expensive</li>
+                        <li>No Water Filtration Kit</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">The Prima is more affordable, more versatile and better equipped than the PAX 2.</div>
+                 </div>
+             </div>
+          </div>          
+          <div class="comparison-section">
+             <h3 class="comparison-title"><span class="arrow" style="padding-right:20px;">&#x25BC;</span>7th Floor SideKick vs Haze Dual</h3>
+             <div class="comparison-content">
+                 <div class="column">
+                     <h3><img src="<?=$green_check;?>" style="width:25px; padding:0px 4px 4px 0px;">SideKick</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$sidekick;?>" style="width:265px;">
+                     <ul>
+                        <li>21 Preset Temperature Settings</li>
+                        <li>Digital Display</li>
+                        <li>Stirring Mechanism</li>
+                        <li>Vortex Vapor Cooling Insert</li>
+                        <li>Water Filtration Attachment Available</li>
+                     </ul>           
+                 </div>
+                 <div class="column similarities">
+                     <h3>Similarities</h3>
+                     <ul>
+                        <li>Glass Draw-Stem</li>
+                        <li>Compatible w/ Herbs & Wax</li>
+                        <li>Hybrid Heating System (Conduction/Convection)</li>
+                        <li>Multiple Color Options</li>
+                        <li>Powered by Removable/Replaceable Batteries</li>
+                     </ul>
+                 </div>
+                 <div class="column">
+                     <h3><img src="<?=$red_x;?>" style="width:25px; padding:0px 4px 4px 0px;">Haze</h3>
+                     <img src="<?=$base_url;?>catalog/product<?=$haze_dual;?>" style="width:265px;">
+                     <ul>
+                        <li>4 Preset Temperature Settings</li>
+                        <li>No Digital Display</li>
+                        <li>No Stirring Capability</li>
+                        <li>No Vapor Cooling Capability</li>
+                        <li>No Water Filtration Kit</li>
+                     </ul>
+                 </div>
+                 <div>
+                 		<div class="bottom-line-header">The Bottom Line:</div>
+                     <div class="bottom-line">While more expensive, the SideKick is easier to maintain, performs better and is better equipped than the Haze.</div>
+                 </div>
+             </div>
+          </div>
+          
+      </div>    
+   </li>
+   <li>
+   	<div class="quiz-link-outer"><a href="http://www.vapornation.com/prodguide/learning-center/quiz?chapter=3" class="quiz-link">Click Here to Take the Chapter Three Quiz</a></div>
+
+   </li>
+</ul>
+
+
